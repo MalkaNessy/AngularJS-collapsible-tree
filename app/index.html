@@ -19,16 +19,16 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
+	<h1>Contact Tree </h1>
 	<script type="text/ng-template"  id="tree_item_renderer.html">
-		<p ng-click="click(data)">{{data.name}}</p>
+		<p ng-click="click(data)" ng-class="{'selected': data.id==selectedId}"  >{{data.name}} </p>
 		<ul>
-			<li ng-repeat="data in data.nodes" ng-include="'tree_item_renderer.html'"></li>
+			<li ng-repeat="data in data.nodes" ng-include="'tree_item_renderer.html'" ></li>
 		</ul>
+	
 	</script>
-
-	<ul ng-app="Application" ng-controller="View1Ctrl">
-		<li ng-repeat="data in tree" ng-include="'tree_item_renderer.html'" ></li>
+	<ul ng-app="myApp" ng-controller="View1Ctrl">
+		<li ng-repeat="data in tree" ng-include="'tree_item_renderer.html'"></li>
 	</ul>
 	
   <!-- In production use:
